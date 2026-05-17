@@ -1,2 +1,22 @@
-# epic-dataScience
-This is my data science course journey, with Code With Harry, and I am posting all of my projects and code in this repo for keeping up with stakes and improving upon them.
+# Data Science Journey 🚀
+
+This repository documents my Data Science learning journey with :contentReference[oaicite:0]{index=0}.  
+
+I’ll be uploading all my projects, practice code, notes, and experiments here as I continue learning and improving my skills in Python and Data Science.
+
+The purpose of this repository is to:
+- Track my learning progress
+- Practice and improve consistently
+- Build real projects
+- Stay disciplined and motivated
+- Create a strong portfolio over time
+
+## Technologies I’m Learning
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Machine Learning
+- Data Analysis
+
+More projects and updates will be added regularly as I continue this journey.
