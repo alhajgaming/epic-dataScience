@@ -1,0 +1,82 @@
+[33mcommit 7ab476aa36bc1665b34aa88a46ba3ebc92cc6839[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: alhajgaming <pathanalhajkhanabbaskhan@gmail.com>
+Date:   Wed May 20 04:46:08 2026 +0530
+
+    Added PeopleYoumayknow Py script
+
+[1mdiff --git a/Coders of Delhi/Part 3/PeopleYouMayknow.ipynb b/Coders of Delhi/Part 3/PeopleYouMayknow.ipynb[m
+[1mnew file mode 100644[m
+[1mindex 0000000..37b064b[m
+[1m--- /dev/null[m
+[1m+++ b/Coders of Delhi/Part 3/PeopleYouMayknow.ipynb[m	
+[36m@@ -0,0 +1,70 @@[m
+[32m+[m[32m{[m
+[32m+[m[32m "cells": [[m
+[32m+[m[32m  {[m
+[32m+[m[32m   "cell_type": "code",[m
+[32m+[m[32m   "execution_count": 7,[m
+[32m+[m[32m   "id": "486be1c5",[m
+[32m+[m[32m   "metadata": {},[m
+[32m+[m[32m   "outputs": [[m
+[32m+[m[32m    {[m
+[32m+[m[32m     "name": "stdout",[m
+[32m+[m[32m     "output_type": "stream",[m
+[32m+[m[32m     "text": [[m
+[32m+[m[32m      "People you may know for user 1: [7, 8, 9, 10, 11, 12]\n"[m
+[32m+[m[32m     ][m
+[32m+[m[32m    }[m
+[32m+[m[32m   ],[m
+[32m+[m[32m   "source": [[m
+[32m+[m[32m    "import json\n",[m
+[32m+[m[32m    "\n",[m
+[32m+[m[32m    "def load_data(filename):\n",[m
+[32m+[m[32m    "    with open(filename, 'r') as f:\n",[m
+[32m+[m[32m    "        return json.load(f)\n",[m
+[32m+[m[32m    "    \n",[m
+[32m+[m[32m    "def People_You_May_know(user_id, data):\n",[m
+[32m+[m[32m    "    user_freinds = {}\n",[m
+[32m+[m[32m    "    for user in data['users']:\n",[m
+[32m+[m[32m    "        user_freinds[user['id']] = set(user['friends'])\n",[m
+[32m+[m[32m    "\n",[m
+[32m+[m[32m    "    if user_id not in user_freinds:\n",[m
+[32m+[m[32m    "        return[]\n",[m
+[32m+[m[32m    "    direct_friends = user_freinds[user_id]\n",[m
+[32m+[m[32m    "    suggestion = {}\n",[m
+[32m+[m[32m    "    for friend in direct_friends:\n",[m
+[32m+[m[32m    "        for mutual in user_freinds[friend]:\n",[m
+[32m+[m[32m    "            if mutual != user_id and mutual not in direct_friends:\n",[m
+[32m+[m[32m    "                suggestion[mutual] = suggestion.get(mutual, 0) + 1\n",[m
+[32m+[m[32m    "            \n",[m
+[32m+[m[32m    "    sorted_suggestions = sorted(suggestion.items(), key=lambda x: x[1], reverse=True)\n",[m
+[32m+[m[32m    "    return [user_id for user_id, _ in sorted_suggestions]\n",[m
+[32m+[m[32m    "\n",[m
+[32m+[m[32m    "\n",[m
+[32m+[m[32m    "data = load_data(\"MassiveData.json\")\n",[m
+[32m+[m[32m    "user_id = 1\n",[m
+[32m+[m[32m    "recc = People_You_May_know(user_id, data)\n",[m
+[32m+[m[32m    "print(f\"People you may know for user {user_id}: {recc}\")"[m
+[32m+[m[32m   ][m
+[32m+[m[32m  }[m
+[32m+[m[32m ],[m
+[32m+[m[32m "metadata": {[m
+[32m+[m[32m  "kernelspec": {[m
+[32m+[m[32m   "display_name": "Python 3",[m
+[32m+[m[32m   "language": "python",[m
+[32m+[m[32m   "name": "python3"[m
+[32m+[m[32m  },[m
+[32m+[m[32m  "language_info": {[m
+[32m+[m[32m   "codemirror_mode": {[m
+[32m+[m[32m    "name": "ipython",[m
+[32m+[m[32m    "version": 3[m
+[32m+[m[32m   },[m
+[32m+[m[32m   "file_extension": ".py",[m
+[32m+[m[32m   "mimetype": "text/x-python",[m
+[32m+[m[32m   "name": "python",[m
+[32m+[m[32m   "nbconvert_exporter": "python",[m
+[32m+[m[32m   "pygments_lexer": "ipython3",[m
+[32m+[m[32m   "version": "3.14.4"[m
+[32m+[m[32m  }[m
+[32m+[m[32m },[m
+[32m+[m[32m "nbformat": 4,[m
+[32m+[m[32m "nbformat_minor": 5[m
+[32m+[m[32m}[m
