@@ -1,4 +1,4 @@
-# 🔗 Social Network Recommendation System
+# 🔗 Coders of delhi project by code with harry
 
 A Python-based mini social network engine that simulates Facebook-style recommendations — **"People You May Know"** and **"Pages You Might Like"** — using graph traversal and collaborative filtering logic on custom JSON datasets.
 
